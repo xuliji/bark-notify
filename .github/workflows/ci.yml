@@ -1,0 +1,29 @@
+# Tests only: this bundle has no dependencies, so there is no install step and
+# no build step. Publishing is done manually from a maintainer's terminal
+# (`npm publish`), which keeps the first release away from the npm token /
+# 2FA-bypass rules that a CI publisher would have to satisfy.
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20, 22]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Unit and behaviour tests
+        run: npm test
+      - name: The published file list must stay complete
+        run: npm pack --dry-run
