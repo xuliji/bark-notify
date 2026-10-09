@@ -1,12 +1,31 @@
 {
-  "name": "@local/bark-notify",
+  "name": "@lijixu/bark-notify",
   "version": "1.0.0",
-  "private": true,
   "license": "MIT",
-  "description": "Push Bark notifications to iPhone and Apple Watch when an agent finishes a run or needs approval.",
+  "description": "DSH bundle: push Bark notifications to iPhone and Apple Watch when an agent finishes a run, needs approval, or errors out.",
   "type": "module",
   "main": "plugin.js",
   "icon": "./icon.svg",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xuliji/bark-notify.git"
+  },
+  "homepage": "https://github.com/xuliji/bark-notify#readme",
+  "bugs": {
+    "url": "https://github.com/xuliji/bark-notify/issues"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "dsh-bundle",
+    "deepseek-harness",
+    "bark",
+    "push-notification",
+    "apple-watch"
+  ],
+  "scripts": {
+    "test": "node --test"
+  },
   "exports": {
     ".": "./plugin.js",
     "./package.json": "./package.json",
@@ -21,6 +40,9 @@
     "README.en.md",
     "LICENSE"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "dsh": {
     "bundle": {
       "patch": "./cordis.patch.yml"

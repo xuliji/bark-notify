@@ -1,16 +1,21 @@
-# @local/bark-notify bundle patch.
+# @lijixu/bark-notify bundle patch.
 # `deviceKey` 是空占位符，必须填上你的 Bark Key 才会真正推送。
-# 也可以不改这里，而在 profile 的 patch 层（~/.dsh/profiles/desktop/cordis.patch.yml）
-# 用同 id 覆盖 —— 那一层优先级更高，升级本 bundle 时不会丢。
+#
+# ⚠️ 本文件会随 npm 包公开分发：**不要把真实 Bark Key 写在这里**。
+# 请改在 profile 的 patch 层（~/.dsh/profiles/desktop/cordis.patch.yml）
+# 用同 id 覆盖 —— 那一层优先级更高、不会进 git、升级本 bundle 时也不会丢。
 - insert:
     - id: bark-notify
-      name: '@local/bark-notify'
+      name: '@lijixu/bark-notify'
       config:
         serverUrl: https://api.day.app
         deviceKey: '' # ← 填 Bark App 首页 https://api.day.app/xxxxx 里的 xxxxx
         notifyOnFinish: true
         notifyOnApproval: true
         notifyOnError: true
+        # 运行被中止（手动停止 / 上级取消 / hook 取消 / 会话关闭）默认不推送；
+        # 设为 true 时改推一条「⏹️ 已中止」。
+        notifyOnAbort: false
         includeSubagents: false
         settleMs: 1500
         timeoutMs: 10000
