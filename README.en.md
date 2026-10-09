@@ -119,3 +119,7 @@ locale/{en,zh}.json  # name and description shown in the Plugin Manager
 icon.svg             # icon
 ```
 
+## License
+
+[MIT](./LICENSE)
+

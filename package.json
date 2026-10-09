@@ -2,6 +2,7 @@
   "name": "@local/bark-notify",
   "version": "1.0.0",
   "private": true,
+  "license": "MIT",
   "description": "Push Bark notifications to iPhone and Apple Watch when an agent finishes a run or needs approval.",
   "type": "module",
   "main": "plugin.js",
@@ -17,7 +18,8 @@
     "icon.svg",
     "locale/*.json",
     "README.md",
-    "README.en.md"
+    "README.en.md",
+    "LICENSE"
   ],
   "dsh": {
     "bundle": {

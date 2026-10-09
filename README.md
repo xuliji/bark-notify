@@ -117,3 +117,7 @@ locale/{en,zh}.json  # Plugin Manager 里展示的名称与描述
 icon.svg             # 图标
 ```
 
+## License
+
+[MIT](./LICENSE)
+
