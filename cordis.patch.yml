@@ -1,0 +1,21 @@
+# @local/bark-notify bundle patch.
+# `deviceKey` 是空占位符，必须填上你的 Bark Key 才会真正推送。
+# 也可以不改这里，而在 profile 的 patch 层（~/.dsh/profiles/desktop/cordis.patch.yml）
+# 用同 id 覆盖 —— 那一层优先级更高，升级本 bundle 时不会丢。
+- insert:
+    - id: bark-notify
+      name: '@local/bark-notify'
+      config:
+        serverUrl: https://api.day.app
+        deviceKey: '' # ← 填 Bark App 首页 https://api.day.app/xxxxx 里的 xxxxx
+        notifyOnFinish: true
+        notifyOnApproval: true
+        notifyOnError: true
+        includeSubagents: false
+        settleMs: 1500
+        timeoutMs: 10000
+        group: DeepSeek Harness
+        sound: ''
+        level: active
+        icon: ''
+        url: ''

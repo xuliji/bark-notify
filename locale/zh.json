@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Bark 通知",
+    "description": "Agent 运行结束或需要授权时，通过 Bark 推送到 iPhone 和 Apple Watch。"
+  }
+}
